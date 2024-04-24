@@ -5,5 +5,15 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'index.html')
 
-def profile(request):
-    return render(request, 'profile.html')
+def explore(request):
+    return render(request, 'explore.html')
+
+def details(request):
+    return render(request, 'details.html')
+
+def create(request):
+    return render(request, 'create.html')
+
+def author(request):
+    return render(request, 'author.html')
+
