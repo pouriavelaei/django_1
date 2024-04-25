@@ -4,20 +4,20 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'website/index.html')
 
 
 def explore(request):
-    return render(request, 'explore.html')
+    return render(request, 'website/explore.html')
 
 
 def details(request):
-    return render(request, 'details.html')
+    return render(request, 'website/details.html')
 
 
 def create(request):
-    return render(request, 'create.html')
+    return render(request, 'website/create.html')
 
 
 def author(request):
-    return render(request, 'author.html')
+    return render(request, 'website/author.html')

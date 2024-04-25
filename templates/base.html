@@ -32,7 +32,7 @@ https://templatemo.com/tm-577-liberty-market
 </head>
 <body>
     <!-- ***** Preloader Start ***** -->
-  {% comment %} <div id="js-preloader" class="js-preloader">
+  <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
       <span class="dot"></span>
       <div class="dots">
@@ -40,7 +40,7 @@ https://templatemo.com/tm-577-liberty-market
         <span></span>
         <span></span>
       </div>
-    </div> {% endcomment %}
+    </div>
   </div>
   <!-- ***** Preloader End ***** -->
 
@@ -56,13 +56,15 @@ https://templatemo.com/tm-577-liberty-market
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href='{% url "BaseSite:explore" %}'>Explore</a></li>
-                        <li><a href='{% url "BaseSite:details" %}'>Item Details</a></li>
-                        <li><a href='{% url "BaseSite:author" %}'>Author</a></li>
-                        <li><a href='{% url "BaseSite:create" %}'>Create Yours</a></li>
-                    </ul>   
+                    {% with request.resolver_match.url_name as url_name %}
+                      <ul class="nav">
+                          <li><a href="{% url "BaseSite:home" %}" class="{% if url_name == 'home' %}active{% endif %}" >Home</a></li>
+                          <li><a href='{% url "BaseSite:explore" %}' class="{% if url_name == 'explore' %}active{% endif %}" >Explore</a></li>
+                          <li><a href='{% url "BaseSite:details" %}' class="{% if url_name == 'details' %}active{% endif %}" >Item Details</a></li>
+                          <li><a href='{% url "BaseSite:author" %}' class="{% if url_name == 'author' %}active{% endif %}" >Author</a></li>
+                          <li><a href='{% url "BaseSite:create" %}' class="{% if url_name == 'create' %}active{% endif %}" >Create Yours</a></li>
+                      </ul>   
+                    {% endwith %}
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -74,9 +76,7 @@ https://templatemo.com/tm-577-liberty-market
   </header>
   <!-- ***** Header Area End ***** -->
 
-{% block content %}
-
-{% endblock %}
+{% block content %}{% endblock %}
 
 
 
@@ -92,5 +92,17 @@ https://templatemo.com/tm-577-liberty-market
         </div>
     </footer>
 
+      <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src='{% static "vendor/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "vendor/bootstrap/js/bootstrap.min.js" %}'></script>
+
+  <script src='{% static "assets/js/isotope.min.js" %}'></script>
+  <script src='{% static "assets/js/owl-carousel.js" %}'></script>
+
+  <script src='{% static "assets/js/tabs.js" %}'></script>
+  <script src='{% static "assets/js/popup.js" %}'></script>
+  <script src='{% static "assets/js/custom.js" %}'></script>
+  
 </body>
 </html>
