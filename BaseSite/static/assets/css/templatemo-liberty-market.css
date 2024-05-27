@@ -373,7 +373,7 @@ Header Style
   display: flex;
   background-color: #fff;
   padding: 15px 30px;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .background-header .main-nav {
@@ -404,7 +404,7 @@ Header Style
 .header-area .main-nav .nav {
   display: inline-flex;
   flex-basis: 70%;
-  justify-content: flex-end;
+  justify-content: flex-start;
   vertical-align: middle;
   text-align: right;
   margin-top: 15px;
@@ -641,7 +641,7 @@ Header Style
     padding: 0px;
   }
   .header-area .logo {
-    margin-left: 0px;
+    margin-right: 0px;
   }
   .header-area .menu-trigger {
     display: block !important;

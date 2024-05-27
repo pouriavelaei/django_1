@@ -50,27 +50,27 @@ https://templatemo.com/tm-577-liberty-market
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
+                    <!-- ***** Menu Start ***** -->
+                    {% with request.resolver_match.url_name as url_name %}
+                    <ul class="nav">
+                      <li><a href="{% url "BaseSite:home" %}" class="{% if url_name == 'home' %}active{% endif %}" >Home</a></li>
+                      <li><a href='{% url "BaseSite:explore" %}' class="{% if url_name == 'explore' %}active{% endif %}" >Explore</a></li>
+                      <li><a href='{% url "BaseSite:details" %}' class="{% if url_name == 'details' %}active{% endif %}" >Item Details</a></li>
+                      <li><a href='{% url "BaseSite:author" %}' class="{% if url_name == 'author' %}active{% endif %}" >Author</a></li>
+                      <li><a href='{% url "BaseSite:create" %}' class="{% if url_name == 'create' %}active{% endif %}" >Create Yours</a></li>
+                    </ul>   
+                    {% endwith %}
+                    <a class='menu-trigger'>
+                      <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
                         <img src='{% static "assets/images/logo.png" %}' alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    {% with request.resolver_match.url_name as url_name %}
-                      <ul class="nav">
-                          <li><a href="{% url "BaseSite:home" %}" class="{% if url_name == 'home' %}active{% endif %}" >Home</a></li>
-                          <li><a href='{% url "BaseSite:explore" %}' class="{% if url_name == 'explore' %}active{% endif %}" >Explore</a></li>
-                          <li><a href='{% url "BaseSite:details" %}' class="{% if url_name == 'details' %}active{% endif %}" >Item Details</a></li>
-                          <li><a href='{% url "BaseSite:author" %}' class="{% if url_name == 'author' %}active{% endif %}" >Author</a></li>
-                          <li><a href='{% url "BaseSite:create" %}' class="{% if url_name == 'create' %}active{% endif %}" >Create Yours</a></li>
-                      </ul>   
-                    {% endwith %}
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
+                  </nav>
+                </div>
         </div>
     </div>
   </header>
